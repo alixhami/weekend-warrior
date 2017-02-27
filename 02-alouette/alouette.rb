@@ -12,13 +12,7 @@ class Alouette
   ]
 
   def self.lines_for_verse(num)
-    lines = []
-
-    (0..num).each do |index|
-      lines.unshift(@@all_items[index])
-    end
-
-    lines
+    @@all_items[0..num].reverse
   end
 
   def self.verse(num)
@@ -35,11 +29,11 @@ class Alouette
   end
 
   def self.sing
-    refrain = "Alouette, gentille alouette,\nAlouette, je te plumerai.\n"
-    song = refrain + "\n"
+    refrain = "Alouette, gentille alouette,\nAlouette, je te plumerai.\n\n"
+    song = refrain
 
     (@@all_items.length).times do |i|
-      song += verse(i) + "\n\n" + refrain + "\n"
+      song += verse(i) + "\n\n" + refrain
     end
 
     song.strip

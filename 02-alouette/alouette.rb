@@ -1,6 +1,6 @@
 class Alouette
 
-  @@all_items = [
+  ALL_ITEMS = [
     "Et la tête!",
     "Et le bec!",
     "Et les yeux!",
@@ -12,7 +12,7 @@ class Alouette
   ]
 
   def self.lines_for_verse(num)
-    @@all_items[0..num].reverse
+    ALL_ITEMS[0..num].reverse
   end
 
   def self.verse(num)
@@ -32,7 +32,7 @@ class Alouette
     refrain = "Alouette, gentille alouette,\nAlouette, je te plumerai.\n\n"
     song = refrain
 
-    (@@all_items.length).times do |i|
+    (ALL_ITEMS.length).times do |i|
       song += verse(i) + "\n\n" + refrain
     end
 
